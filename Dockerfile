@@ -17,8 +17,9 @@ ENV PATH $PATH:${GRADLE_USER_HOME}/gradle-${GRADLE_DEFAULT_VERSION}/bin
 
 # bash -> gradle wrapper script
 # git openssh -> checkout GitHub projects
+# libstdc++ -> fixes the failed to load native library libnative-platform.so error
 RUN apk update && apk upgrade && \
-    apk add --no-cache wget bash git openssh && \
+    apk add --no-cache wget bash git openssh libstdc++ && \
     rm -rf /var/cache/apk/*
 
 # Installing Android SDK
